@@ -122,7 +122,7 @@ class Account(MPTTModel):
     uuid = SmallUUIDField(
         default=uuid_default(), editable=False, verbose_name=_("uuid")
     )
-    name = models.CharField(max_length=50, verbose_name=_("name"))
+    name = models.CharField(max_length=50, verbose_name=_("name"), unique=True, blank=False, null=False)
     parent = TreeForeignKey(
         "self",
         null=True,
