@@ -518,6 +518,7 @@ class Transaction(models.Model):
     )
     related_object_id = models.CharField(null=False, blank=True, max_length=64)
     related_object = GenericForeignKey('related_object_content_type', 'related_object_id')
+    transaction_key = models.CharField(max_length=40, null=False, blank=True)
 
     class Meta:
         get_latest_by = "date"
