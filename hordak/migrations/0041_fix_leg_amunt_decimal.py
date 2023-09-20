@@ -3,8 +3,6 @@
 import djmoney.models.fields
 from django.db import migrations
 
-from hordak.defaults import DECIMAL_PLACES, MAX_DIGITS
-
 class Migration(migrations.Migration):
 
     dependencies = [
@@ -16,8 +14,8 @@ class Migration(migrations.Migration):
             model_name="leg",
             name="amount",
             field=djmoney.models.fields.MoneyField(
-                decimal_places=DECIMAL_PLACES,
-                max_digits=MAX_DIGITS,
+                decimal_places=4,
+                max_digits=16,
                 default_currency="CLP",
                 help_text="Record debits as positive, credits as negative",
             ),
