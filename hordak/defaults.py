@@ -26,6 +26,6 @@ def project_currencies() -> list:
     return project_currs
 
 
-DECIMAL_PLACES = 4
+DECIMAL_PLACES = getattr(settings, "HORDAK_DECIMAL_PLACES", 2)
 
-MAX_DIGITS = 16
+MAX_DIGITS = getattr(settings, "HORDAK_MAX_DIGITS", 13)
